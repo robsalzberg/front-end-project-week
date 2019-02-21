@@ -47,7 +47,7 @@ class EditNote extends Component {
   render() {
     if (this.state.noteEdited) {
       this.props.getNotes();
-      return <Redirect to="/" />;
+      return <Redirect to="/main" />;
     }
     return (
       <div className="pageWrapper">

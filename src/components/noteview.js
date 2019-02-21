@@ -40,7 +40,7 @@ class NoteView extends Component {
   }
   render() {
     if (this.state.backtoList) {
-      return <Redirect to="/" />;
+      return <Redirect to="/main" />;
     }
     return (
       <div>

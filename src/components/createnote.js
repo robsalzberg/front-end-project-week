@@ -36,7 +36,7 @@ class CreateNote extends Component {
   render() {
     if (this.state.noteCreated) {
       this.props.getNotes();
-      return <Redirect to="/" />;
+      return <Redirect to="/main" />;
     }
     return (
       <div>
