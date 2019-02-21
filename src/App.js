@@ -6,6 +6,10 @@ import NoteList from "./components/notelist";
 import CreateNote from "./components/createnote";
 import NoteView from "./components/noteview";
 import EditNote from "./components/editnote";
+import Callback from "./components/callback";
+import Auth from "./Auth";
+
+const auth = new Auth();
 
 class App extends Component {
   constructor() {
@@ -58,10 +62,23 @@ class App extends Component {
           </div>
         </div>
         <div className="display">
+          <p>Login here to access the notes<a href="/main"> Login</a></p>
+          <div>
+            <p>
+              Please login in first
+            </p>
+            <button onClick={auth.login}>
+              Login
+            </button>
+          </div>
           <Route
-            path="/"
+            path="/main"
             exact
             render={props => <NoteList {...props} notes={this.state.notes} />}
+          />
+          <Route
+          path="/callback"
+          render={props =><Callback {...props} />}
           />
           <Route
             path="/create"
@@ -89,7 +106,7 @@ class App extends Component {
           />
         </div>
       </div>
-    );
+      );
   }
 }
 
